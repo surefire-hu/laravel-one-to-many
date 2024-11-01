@@ -25,9 +25,9 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
 
-    Route::get('/', function () {
-        return view('admin.welcome'); // Questa è la tua dashboard
-    })->name('dashboard');
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard'); 
+        })->name('dashboard');
 
     Route::resource('projects', ProjectController::class);
 
